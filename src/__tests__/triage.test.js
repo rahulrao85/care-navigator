@@ -23,4 +23,16 @@ describe('Triage Logic', () => {
     const result = runSimulatedLogic('I feel a bit tired today');
     expect(result.targetSpecialty).toBe('General Practitioner');
   });
+
+  it('handles empty or undefined queries gracefully', () => {
+    expect(isEmergency('')).toBe(false);
+    expect(isEmergency(null)).toBe(false);
+    expect(isEmergency(undefined)).toBe(false);
+  });
+
+  it('handles crazy casing and spacing', () => {
+    expect(isEmergency('   I HAVE sEveRE ChEsT PAin   ')).toBe(true);
+    const result = runSimulatedLogic('   DeNtiSt   ');
+    expect(result.targetSpecialty).toBe('Dentist');
+  });
 });

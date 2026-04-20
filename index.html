@@ -37,9 +37,10 @@
 
         <section class="input-section">
           <div class="input-wrapper">
+            <label for="userInput" class="sr-only">Describe your symptoms or paste text</label>
             <textarea id="userInput" placeholder="E.g., I have sharp pain in my lower right abdomen..." rows="4" aria-label="Describe your symptoms or paste text"></textarea>
-            <button id="submitBtn" class="primary-btn pulse-glow">
-              <span class="material-symbols-rounded">auto_awesome</span> 
+            <button id="submitBtn" type="button" class="primary-btn pulse-glow">
+              <span class="material-symbols-rounded" aria-hidden="true">auto_awesome</span> 
               Analyze
             </button>
           </div>
@@ -47,9 +48,9 @@
           <div class="quick-prompts">
             <p>Or try an example:</p>
             <div class="pills">
-              <button class="pill-btn" data-query="Can you explain this lab result: 'Mild leukocytosis with left shift'?">Explain Lab Result</button>
-              <button class="pill-btn" data-query="Find a cardiologist near me">Find Cardiologist</button>
-              <button class="pill-btn" data-query="Schedule a dental clinic checkup reminder">Schedule Dentist Reminder</button>
+              <button type="button" class="pill-btn" data-query="Can you explain this lab result: 'Mild leukocytosis with left shift'?">Explain Lab Result</button>
+              <button type="button" class="pill-btn" data-query="Find a cardiologist near me">Find Cardiologist</button>
+              <button type="button" class="pill-btn" data-query="Schedule a dental clinic checkup reminder">Schedule Dentist Reminder</button>
             </div>
           </div>
         </section>
@@ -60,9 +61,9 @@
             <div class="custom-loader"></div>
             <p id="loadingText">Analyzing your query...</p>
           </div>
-          <div id="resultContent" class="hidden glass-card result-fade-in">
+          <div id="resultContent" class="hidden glass-card result-fade-in" aria-live="polite" aria-atomic="true">
             <div class="result-header">
-              <span class="material-symbols-rounded text-primary">analytics</span>
+              <span class="material-symbols-rounded text-primary" aria-hidden="true">analytics</span>
               <h3>Analysis Complete</h3>
             </div>
             
@@ -72,16 +73,16 @@
             <div id="actionButtons" class="action-buttons mt-4 hidden">
               <h4>Recommended Actions</h4>
               <div class="actions-grid">
-                <a href="#" id="googleMapsLink" target="_blank" class="action-card maps-card">
-                  <span class="material-symbols-rounded">location_on</span>
+                <a href="#" id="googleMapsLink" target="_blank" rel="noopener noreferrer" class="action-card maps-card">
+                  <span class="material-symbols-rounded" aria-hidden="true">location_on</span>
                   <div class="action-text">
                     <strong>Find on Google Maps</strong>
                     <span>Locate nearest specialists</span>
                   </div>
                 </a>
                 
-                <a href="#" id="googleCalendarLink" target="_blank" class="action-card calendar-card">
-                  <span class="material-symbols-rounded">event</span>
+                <a href="#" id="googleCalendarLink" target="_blank" rel="noopener noreferrer" class="action-card calendar-card">
+                  <span class="material-symbols-rounded" aria-hidden="true">event</span>
                   <div class="action-text">
                     <strong>Add to Google Calendar</strong>
                     <span>Set a reminder for check-up</span>
@@ -91,8 +92,8 @@
             </div>
 
             <div class="ask-again-wrapper">
-              <button id="askAgainBtn" class="ask-again-btn">
-                <span class="material-symbols-rounded">refresh</span>
+              <button id="askAgainBtn" type="button" class="ask-again-btn">
+                <span class="material-symbols-rounded" aria-hidden="true">refresh</span>
                 Ask Another Question
               </button>
             </div>
